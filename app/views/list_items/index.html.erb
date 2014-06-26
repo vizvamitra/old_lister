@@ -1,0 +1,9 @@
+<h1>Список</h1>
+
+<ul id='list_items'>
+  <%= render 'form' %>
+  <div class='clear_fix'></div>
+  <% @list_items.each do |item| %>
+    <%= render item %>
+  <% end %>
+</ul>

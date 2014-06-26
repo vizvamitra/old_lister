@@ -1,0 +1,6 @@
+<%= form_for @new_item, remote: true do |f| %>
+  <%= f.text_area :text, resize: false %>
+  <div id='add_button_wrapper'>
+    <%= f.submit '' %>
+  </div>
+<% end %>

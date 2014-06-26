@@ -1,0 +1,13 @@
+<li id="list_item_<%= list_item.id %>" class='list_item'>
+
+  <%= form_for list_item, method: :patch, remote: true do |f| %>
+    <%= f.hidden_field :text, value: list_item.text %>
+
+    <%= raw list_item_div(list_item) %>
+  <% end %>
+
+  <div class='controls'>
+    <%= link_to '', switch_done_list_item_path(list_item), method: :patch, remote: true, class: 'icon check' %>
+    <%= link_to '', list_item, method: :delete, remote: true, class: 'icon cross' %>
+  </div>
+</li>

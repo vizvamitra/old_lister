@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  root 'list_items#index'
+
+  resources :list_items, except: [:new, :edit, :show] do
+    member do
+      patch 'switch_done', as: 'switch_done'
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,116 @@
+// Place all the styles related to the RemoteForms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+h1{
+  text-align: center;
+  padding: 10px $input-padding-horizontal;
+}
+
+#new_list_item{
+  margin-bottom: 10px;
+  overflow: auto;
+  outline: 1px solid $darker-gray;
+
+  textarea{
+    line-height: 17px;
+    font-family: verdana;
+    display: inline-block;
+    resize: none;
+    background: $textarea-background-color;
+    min-height: 49px;
+    max-width: $input-width;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 3px 6px;
+    box-shadow: $box-shadow-nofocus;
+    font-size: 16px;
+    float: left;
+    margin-right: $input-margin-right;
+
+    &:focus{
+      background:white;
+      box-shadow: $box-shadow-focus;
+    }
+  }
+
+  #add_button_wrapper{
+    float: left;
+    width: $controls-width;
+    background: $light-gray;
+
+    input{
+      display: block;
+      height: $medium-icon-size;
+      width: $medium-icon-size;
+      border:none;
+      outline:none;
+      background: url(images/plus.svg);
+      margin: auto;
+      cursor: pointer;
+    }
+  }
+}
+
+ul#list_items{
+  list-style:none;
+
+  li.list_item{
+    overflow: auto;
+    &:hover{ background: $light-gray; }
+
+    form{
+      float: left;
+      width: $input-real-width;
+      margin-right: $input-margin-right;
+
+      .list_item_div{
+        padding: 3px $input-padding-horizontal;
+        min-height: 32px;        
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        cursor: pointer;
+
+        &:focus{
+          background: #fff;
+          border: none;
+          outline: none;
+          box-shadow: $box-shadow-focus;
+          cursor: text;
+        }
+
+        &.done{
+          // background: #eeffee;
+          cursor: default;
+          color: $darker-gray;
+          text-decoration: line-through;
+        }
+      }
+    }
+
+    .controls{
+      float: left;
+      padding: 4px 0;
+
+      a{float: left}
+    }
+
+  }
+}
+
+
+.icon{
+  display: inline-block;
+  width: $small-icon-size;
+  height: $small-icon-size;
+  background-size: $small-icon-size $small-icon-size;
+
+  &:focus{outline:none;}
+
+  &.check{ background: url(images/check.svg); }
+  &.cross{ background: url(images/cross.svg); }
+}
+
+.clear_fix{clear:both;}

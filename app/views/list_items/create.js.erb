@@ -1,0 +1,5 @@
+$('#new_list_item input[type=text]').val('').focus()
+
+list_item = $('<%= escape_javascript(render @list_item) %>')
+
+$('#new_list_item').after(list_item)

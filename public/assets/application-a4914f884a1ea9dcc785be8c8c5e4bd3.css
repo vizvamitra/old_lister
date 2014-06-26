@@ -1,3 +1,20 @@
+/* line 3, /home/vizvamitra/work/rails/lister/app/assets/stylesheets/layout.css.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 5, /home/vizvamitra/work/rails/lister/app/assets/stylesheets/layout.css.scss */
+body {
+  font-family: verdana;
+  color: #444444;
+}
+
+/* line 10, /home/vizvamitra/work/rails/lister/app/assets/stylesheets/layout.css.scss */
+#main {
+  max-width: 622px;
+  margin: auto;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,7 +27,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require variables
- *= require_tree .
- *= require_self
+
+
+
  */
+

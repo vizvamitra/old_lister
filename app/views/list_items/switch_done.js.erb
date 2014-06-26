@@ -1,0 +1,8 @@
+div = $('#edit_list_item_<%= @list_item.id %> .list_item_div')
+<% if @list_item.done? %>  
+  div.addClass('done')
+  div.attr('contenteditable', false)
+<% else %>
+  div.removeClass('done')
+  div.attr('contenteditable', true)
+<% end %>

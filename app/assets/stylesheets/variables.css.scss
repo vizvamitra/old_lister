@@ -1,0 +1,30 @@
+// ICONS
+
+$small-icon-size: 30px;
+$medium-icon-size: 55px;
+
+// FONTS
+$font-family: verdana;
+$main-font-color: #444;
+
+// COLORS
+
+$light-gray: rgb(249, 249, 252);
+$darker-gray: rgb(200, 200, 200);
+$purple: #9ecaed;
+
+$textarea-background-color: $light-gray;
+
+$box-shadow-focus: 0px 0px 6px 0px $purple inset;
+$box-shadow-nofocus: 0px 0px 6px 0px $darker-gray inset;
+
+// ELEMENTS
+
+$input-width: 550px;
+$input-padding-horizontal: 6px;
+$input-real-width: $input-width + ($input-padding-horizontal * 2);
+$input-margin-right: 0;
+
+$controls-width: $small-icon-size*2;
+
+$main-width: $input-real-width + $input-margin-right + $controls-width;
