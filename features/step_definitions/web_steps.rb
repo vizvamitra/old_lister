@@ -1,4 +1,12 @@
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
+require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "selectors"))
+
+module WithinHelpers
+  def with_scope(locator)
+    locator ? within(*selector_for(locator)) { yield } : yield
+  end
+end
+World(WithinHelpers)
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
@@ -33,9 +41,15 @@ When /^(?:|I )press "([^"]*)" key$/ do |key|
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
-  if page.respond_to? :should
-    page.should have_content(text)
-  else
-    assert page.has_content?(text)
-  end
+  expect(page).to have_content(text)
 end
+
+Then /^the "([^"]*)" field should be empty$/ do |field|
+  field = find(field)
+  field_value = (field.tag_name == 'textarea') ? field.text : field.value
+  expect(field_value).to eq ""
+end
+
+# Then /^(.*) within "([^"]*)"$/ do |step_name, parent|
+#   with_scope(parent) { step step_name }
+# end

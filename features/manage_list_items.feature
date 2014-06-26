@@ -8,7 +8,9 @@ Background: user is currently on a home page
   
   Given I am on the Lister home page
 
+@javascript
 Scenario: adding a new list item
   When I fill in "list_item_text" with "buy eggs"
   And I press "enter" key
-  Then I should see "1. buy eggs"
+  Then the "textarea" field should be empty
+  And I should see "buy eggs"
