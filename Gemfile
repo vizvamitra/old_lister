@@ -26,6 +26,8 @@ end
 group :test do
   gem 'capybara', '~> 2.3.0'
   gem "capybara-webkit"
+  # gem 'selenium-webdriver'
+  gem "launchy"
   gem 'factory_girl_rails'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'

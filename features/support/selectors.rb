@@ -3,8 +3,10 @@ module HtmlSelectorsHelpers
   def selector_for(locator)
     case locator
 
-    when "list items"
-      "#list_items"
+    when "list items" then "#list_items"
+    when "add" then "#add_button_wrapper input"
+    when "done" then ".check"
+    when "delete" then ".cross"
 
     when /^"(.+)"$/
       $1
