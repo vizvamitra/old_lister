@@ -31,6 +31,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem 'simplecov'
 end
 
 # Use ActiveModel has_secure_password

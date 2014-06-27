@@ -11,5 +11,20 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe ListItemsHelper, :type => :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#list_item_div' do
+    let(:list_item) { build(:list_item) }
+
+    context 'when list item is not marked done' do
+      it 'returns contenteditable div without "done" class' do
+        expect( list_item_div(list_item) ).to match /^<div class='list_item_div' spellcheck='false' contenteditable='true'>/
+      end
+    end
+
+    context 'when list item is marked done' do
+      it 'returns noncontenteditable div with "done" class' do
+        list_item.done = true
+        expect( list_item_div(list_item) ).to match /^<div class='list_item_div done' spellcheck='false'>/
+      end
+    end
+  end
 end
