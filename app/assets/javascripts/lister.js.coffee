@@ -5,12 +5,12 @@ window.Lister = window.Lister || do ->
   define = (name, module) ->
     window.Lister[name] = window.Lister[name] || do ->
       modules.push(name)
-      newModule = module()
+      new_module = module()
 
-      if (window.Lister.initialized)
-        newModule.init()
+      if (window.Lister._initialized)
+        new_module.init()
 
-      return newModule
+      return new_module
 
     return window.Lister[name]
 
@@ -18,7 +18,7 @@ window.Lister = window.Lister || do ->
     for i in [0..modules.length-1]
       window.Lister[modules[i]].init()
 
-    window.Lister.initialized = true
+    window.Lister._initialized = true
 
   return {
     _init: init,

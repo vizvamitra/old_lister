@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root 'list_items#index'
 
   resources :list_items, except: [:new, :edit, :show] do
