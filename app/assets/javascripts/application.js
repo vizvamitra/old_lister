@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.autogrow-textarea.js
+//= require lister
 //= require_tree .
