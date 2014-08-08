@@ -7,8 +7,9 @@ module HtmlSelectorsHelpers
     when "add" then "#add_button_wrapper input"
     when "done" then ".check"
     when "delete" then ".cross"
+    when "start_registration" then "#start_registration"
 
-    when /^"(.+)"$/
+    when /^"([^"]+)"$/
       $1
 
     else
