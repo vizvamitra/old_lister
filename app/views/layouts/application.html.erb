@@ -9,9 +9,25 @@
 </head>
 <body>
 
-<section id='main'>
-  <%= yield %>
-</section>
+<div id='messages'>
+  <% if flash[:notice] %>
+    <div id='notice'><%= flash[:notice] %></div>
+  <% end %>
+</div>
+
+<div id='wrapper'>
+  <aside id='main_controls'>
+    <div id='user_menu'>
+      <%= render 'shared/user_menu' %>
+    </div>
+  </aside>
+
+  <section id='main'>
+    <%= yield %>    
+  </section>
+</div>
+
+<div id='registration_form_wrapper'></div>
 
 </body>
 </html>

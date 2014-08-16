@@ -1,0 +1,8 @@
+<div id='user_menu_content'>
+  <% if @current_user %>
+    <span><%= @current_user.login.capitalize %></span>
+  <% else %>
+    <%= link_to 'Вход', '#', id: 'login' %> /
+    <%= link_to 'Регистрация', registration_path, remote: true, id: 'start_registration' %>
+  <% end %>
+</div>

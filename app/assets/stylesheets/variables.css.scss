@@ -15,8 +15,14 @@ $purple: #9ecaed;
 
 $textarea-background-color: $light-gray;
 
+$notice-font-color: #044B00;
+$notice-bg-color: rgba(210, 225, 210, 0.5);
+
 $box-shadow-focus: 0px 0px 6px 0px $purple inset;
 $box-shadow-nofocus: 0px 0px 6px 0px $darker-gray inset;
+
+// BASIC MARGINS AND PADDINGS
+$basic-margin-vertical: 15px;
 
 // ELEMENTS
 
@@ -28,3 +34,7 @@ $input-margin-right: 0;
 $controls-width: $small-icon-size*2;
 
 $main-width: $input-real-width + $input-margin-right + $controls-width;
+
+$aside-width: 200px;
+
+$wrapper-width: $main-width + $aside-width;

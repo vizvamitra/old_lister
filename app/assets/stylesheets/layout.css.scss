@@ -7,7 +7,60 @@ body{
   color: $main-font-color;
 }
 
-#main{
-  width: $main-width;
+#wrapper{
   margin: auto;
+  width: $wrapper-width;
+  margin-top: 10px;
+
+  #main_controls{
+    width: $aside-width;
+    float: left;
+
+    #user_menu{
+      margin: auto;
+      height: 55px;
+      text-align: center;
+      
+      #user_menu_content{
+        vertical-align: middle;
+        line-height: 55px;
+      }
+    }
+  }
+
+  #main{
+    width: $main-width;
+    float: right;
+  }
+}
+
+#registration_form_wrapper{
+  position: absolute;
+  top: calc(50% - 85px);
+  left: calc(50% - 110px);
+  height: 150px;
+  width: 200px;
+  padding: 10px;
+  background: #afa;
+  display: none;
+  text-align: center;
+
+  input{margin-bottom: 5px;}
+}
+
+.field_with_errors input{
+  border: 3px solid #f88;
+}
+
+#messages{
+  position: absolute;
+  top: 0;
+  margin: auto;
+  max-width: $main-width - 100px;
+
+  #notice{
+    padding: 2px 10px;
+    background: $notice-bg-color;
+    color: $notice-font-color;
+  }
 }

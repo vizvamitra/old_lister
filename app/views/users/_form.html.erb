@@ -1,0 +1,9 @@
+<%= form_for @user, method: :post, remote: true do |f| %>
+
+  <%= f.text_field :login, placeholder: 'Логин' %>
+  <%= f.password_field :password, placeholder: 'Пароль' %>
+  <%= f.password_field :password_confirmation, placeholder: 'Подтверждение' %><br/>
+
+  <%= f.submit 'Зарегистрироваться' %>
+
+<% end %>
