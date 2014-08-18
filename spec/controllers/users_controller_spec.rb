@@ -4,20 +4,48 @@ RSpec.describe UsersController, :type => :controller do
 
   describe "GET :register" do
 
+    before(:each){ get :register }
+
     it "assigns @user" do
-      get :register
       expect(assigns(:user)).to be_a_new User
     end
 
-    context 'ajax request' do
-      before(:each){ get :register, format: :js }
-
-      it 'renders template :register' do
-        expect( response ).to render_template :register
-      end
+    it 'renders template :register' do
+      expect( response ).to render_template :register
     end
 
   end
+
+
+  describe "POST :check_login" do
+    render_views
+
+    it 'searches for user with given login' do
+      expect( User ).to receive(:find_by).with(login: 'login')
+      post :check_login, login: 'login', jormat: :js
+    end
+
+    it 'downcases login before search' do
+      expect( User ).to receive(:find_by).with(login: 'login')
+      post :check_login, login: 'LoGIn', jormat: :js
+    end
+
+    context 'user exists' do
+      it 'renders error message' do
+        create(:user, login: 'login')
+        post :check_login, login: 'login', jormat: :js
+        expect( response.body ).to eq 'Логин занят'
+      end
+    end
+
+    context "user doesn't exist" do
+      it 'renders nothing' do
+        post :check_login, login: 'login', jormat: :js
+        expect( response.body ).to eq ''
+      end
+    end
+  end
+
 
   describe "POST :create" do
     
@@ -38,7 +66,7 @@ RSpec.describe UsersController, :type => :controller do
       end
 
       it 'sets success notice' do
-        expect( flash[:notice] ).to eq 'Login зарегистрирован'
+        expect( flash[:notice] ).to eq 'Пользователь Login создан успешно'
       end
 
       it 'initializes session' do

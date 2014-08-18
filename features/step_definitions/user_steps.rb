@@ -3,7 +3,6 @@ Given(/^the user "([^"]*)" eixsts$/) do |name|
 end
 
 When(/^(?:|I )try to register with "([^"]*)", "([^"]*)"(?:, "([^"]*)")?$/) do |name, pass, confirm|
-  step 'I press "start_registration"'
   step %Q{I fill in "login" with "#{name}"}
   step %Q{I fill in "password" with "#{pass}"}
   step %Q{I fill in "password_confirmation" with "#{confirm || pass}"}

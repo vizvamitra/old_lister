@@ -4,6 +4,7 @@ module NavigationHelpers
     case page_name
 
     when /^the (Lister )?home\s?page$/ then '/'
+    when /^the registration page$/ then '/register'
 
     else
       begin

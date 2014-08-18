@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:create]
+  resources :users, only: [:create] do
+    collection do
+      post 'check_login', as: 'check_login'
+    end
+  end
   get 'register', to: 'users#register', as: 'registration'
 
   # The priority is based upon order of creation: first created -> highest priority.

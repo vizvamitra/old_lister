@@ -35,14 +35,8 @@ body{
 }
 
 #registration_form_wrapper{
-  position: absolute;
-  top: calc(50% - 85px);
-  left: calc(50% - 110px);
-  height: 150px;
-  width: 200px;
+  margin: auto;
   padding: 10px;
-  background: #afa;
-  display: none;
   text-align: center;
 
   input{margin-bottom: 5px;}

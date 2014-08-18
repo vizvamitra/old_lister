@@ -20,4 +20,23 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      user:
+        login: "логин"
+        password: "пароль"
+        password_confirmation: "подтверждение"
+    errors:
+      models:
+        user:
+          attributes:
+            login:
+              blank: "Пожалуйста, укажите %{attribute}"
+              too_long: "Логин слишком длинный"
+              invalid: "Недопустимый логин"
+              taken: 'Логин занят'
+            password:
+              blank: "Пожалуйста, укажите %{attribute}"
+              too_short: "Пароль слишком короткий"
+      messages:
+        confirmation: "Не совпадает с паролем"

@@ -17,11 +17,12 @@ RSpec.describe User, :type => :model do
       it 'validates uniqueness of login' do
         create(:user, login: 'Username')
         expect( build(:user, login: 'Username') ).not_to be_valid
+        expect( build(:user, login: 'username') ).not_to be_valid
       end
 
       it 'validates length of login' do
-        expect( build(:user, login: 'Us') ).not_to be_valid
-        expect( build(:user, login: 'U'*21) ).not_to be_valid
+        expect( build(:user, login: 'U'*3) ).to be_valid
+        expect( build(:user, login: 'U'*31) ).not_to be_valid
       end
 
       it 'validates format of login' do

@@ -32,6 +32,11 @@ Then /^(?:|I )should not see "([^"]*)"$/ do |text|
   expect(page).not_to have_content(text)
 end
 
+Then /^(?:|I )should be on (.*)$/ do |page_name|
+  current_path = URI.parse(current_url).path
+  current_path.should == path_to(page_name)
+end
+
 Then /^the "([^"]*)" field should be empty$/ do |field|
   field = find(field)
   field_value = (field.tag_name == 'textarea') ? field.text : field.value

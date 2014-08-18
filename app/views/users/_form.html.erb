@@ -1,9 +1,50 @@
-<%= form_for @user, method: :post, remote: true do |f| %>
+<% if @user.errors.any? %>
+  <% content_for :errors do %>
+    <% @user.errors.full_messages.each do |e| %>
+      <span><%= e %></span>
+    <% end %>
+  <% end %>
+<% end %>
 
-  <%= f.text_field :login, placeholder: 'Логин' %>
-  <%= f.password_field :password, placeholder: 'Пароль' %>
-  <%= f.password_field :password_confirmation, placeholder: 'Подтверждение' %><br/>
+<%= form_for @user, method: :post do |f| %>
+  
 
-  <%= f.submit 'Зарегистрироваться' %>
+  <table>
+    <caption>Регистрация</caption>
+
+    <tr>
+      <td id='login_td'>
+        <%= f.text_field :login, placeholder: 'Логин', id: 'login' %>
+        <%= field_errors_div(@user, :login) %>
+      </td>
+      <td class='field_hints'>
+        <p>Может содержать латинские буквы, цифры и символ _</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td id='password_td'>
+        <%= f.password_field :password, placeholder: 'Пароль', id: 'password' %>
+        <%= field_errors_div(@user, :password) %>
+      </td>
+      <td class='field_hints'>
+        <p>Не менее 7 символов</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td id='password_conf_td'>
+        <%= f.password_field :password_confirmation, placeholder: 'Подтверждение', id: 'password_confirmation' %>
+        <%= field_errors_div(@user, :password_confirmation) %>
+      </td>
+      <td class='field_hints'></td>
+    </tr>
+
+    <tr>
+      <td><%= f.submit 'Зарегистрироваться', id: 'register' %></td>
+      <td></td>
+    </tr>
+
+  </table>
 
 <% end %>

@@ -3,6 +3,6 @@
     <span><%= @current_user.login.capitalize %></span>
   <% else %>
     <%= link_to 'Вход', '#', id: 'login' %> /
-    <%= link_to 'Регистрация', registration_path, remote: true, id: 'start_registration' %>
+    <%= link_to 'Регистрация', registration_path, id: 'start_registration' %>
   <% end %>
 </div>
