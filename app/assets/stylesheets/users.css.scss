@@ -11,6 +11,8 @@
     padding: 3px 5px;
     border: 2px solid #ccc;
     font-size: 110%;
+
+    &:focus{outline: none;}
   }
 
   input[type=submit]{
