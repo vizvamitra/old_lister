@@ -1,13 +1,4 @@
-<% if @user.errors.any? %>
-  <% content_for :errors do %>
-    <% @user.errors.full_messages.each do |e| %>
-      <span><%= e %></span>
-    <% end %>
-  <% end %>
-<% end %>
-
 <%= form_for @user, method: :post, html: {class: 'rounded'} do |f| %>
-  
 
   <table>
     <caption>

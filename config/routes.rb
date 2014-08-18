@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'login', to: 'sessions#login', as: 'login'
+  get 'logout', to: 'sessions#logout', as: 'logout'
+
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root 'list_items#index'
 

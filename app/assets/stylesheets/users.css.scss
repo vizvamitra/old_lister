@@ -1,7 +1,7 @@
 @import "variables";
 
 #registration_form_wrapper form{
-  border: 2px solid #ccc;
+  border: 2px solid $darker-gray;
   padding: $basic-padding-vertical $basic-padding-horisontal;
   margin-bottom: $basic-margin-vertical;
 
@@ -9,12 +9,14 @@
     height: 30px;
     width: 300px;
     padding: 3px 5px;
-    border: 2px solid #ccc;
+    border: 2px solid $darker-gray;
     font-size: 110%;
   }
 
   input[type=submit]{
     box-sizing: content-box;
+
+    &:active{height: 34px;}
   }
 
   table{

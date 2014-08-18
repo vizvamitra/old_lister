@@ -1,0 +1,30 @@
+@import "variables";
+
+#login_form{
+  width: 300px;
+  padding: 0;
+  text-align: left;
+
+  input{
+    display: inline-block;
+    width: 102px;
+    padding: 3px 5px;
+    border-radius: 0;
+    border: 2px solid $darker-gray;
+    height: 17px;
+  }
+
+  input[type=text]:focus{
+    border: 2px solid $purple;
+  }
+
+  input[type=submit]{
+    width: auto;
+    box-sizing: content-box;
+    line-height: 17px !important;
+
+    &:active{
+      height: 19px;
+    }
+  }
+}

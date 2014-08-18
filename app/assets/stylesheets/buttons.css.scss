@@ -12,7 +12,6 @@
 
   &:active{
     border: none !important;
-    height: 34px !important;
   }
   &:focus{outline: none;}
   &::-moz-focus-inner{border: none;}
@@ -26,4 +25,9 @@
 
 .button-medium{
   width: 100px;
+}
+
+.button-narrow{
+  height: auto !important;
+  line-height: 100% !important;
 }

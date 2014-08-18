@@ -8,11 +8,13 @@ module HtmlSelectorsHelpers
     when "done" then ".check"
     when "delete" then ".cross"
     when "start_registration" then "#start_registration"
-    when 'login' then '#new_user #login'
-    when 'password' then '#new_user #password'
+    when 'login' then '#login'
+    when 'password' then '#password'
     when 'password_confirmation' then '#new_user #password_confirmation'
     when 'register' then '#new_user #register'
     when 'back' then '#back'
+    when 'log in' then '#log_in'
+    when 'log out' then '#log_out'
 
     when /^"([^"]+)"$/
       $1
