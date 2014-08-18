@@ -1,8 +1,16 @@
-<%= render 'form' %>
+<aside id='main_controls'>
+  <div id='user_menu'>
+    <%= render 'shared/user_menu' %>
+  </div>
+</aside>
 
-<h1>Список</h1>
-<ul id='list_items'>
-  
-  <div class='clear_fix'></div>
-    <%= render partial: 'list_item', collection: @list_items %>
-</ul>
+<section id='main'>
+  <%= render 'form' %>
+
+  <h1>Список</h1>
+  <ul id='list_items'>
+    
+    <div class='clear_fix'></div>
+      <%= render partial: 'list_item', collection: @list_items %>
+  </ul>
+</section>

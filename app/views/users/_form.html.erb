@@ -6,44 +6,51 @@
   <% end %>
 <% end %>
 
-<%= form_for @user, method: :post do |f| %>
+<%= form_for @user, method: :post, html: {class: 'rounded'} do |f| %>
   
 
   <table>
-    <caption>Регистрация</caption>
+    <caption>
+      <h2>Регистрация</h2>
+    </caption>
 
-    <tr>
-      <td id='login_td'>
-        <%= f.text_field :login, placeholder: 'Логин', id: 'login' %>
-        <%= field_errors_div(@user, :login) %>
-      </td>
-      <td class='field_hints'>
-        <p>Может содержать латинские буквы, цифры и символ _</p>
-      </td>
-    </tr>
+    <tbody>
+      <tr>
+        <td id='login_td'>
+          <%= f.text_field :login, placeholder: 'Логин', id: 'login', class: 'rounded' %>
+        </td>
+        <td class='field_hints'>
+          <p>*Может содержать латинские буквы, цифры и символ _</p>
+        </td>
+      </tr>
 
-    <tr>
-      <td id='password_td'>
-        <%= f.password_field :password, placeholder: 'Пароль', id: 'password' %>
-        <%= field_errors_div(@user, :password) %>
-      </td>
-      <td class='field_hints'>
-        <p>Не менее 7 символов</p>
-      </td>
-    </tr>
+      <%= field_errors_tr(@user, :login) %>
 
-    <tr>
-      <td id='password_conf_td'>
-        <%= f.password_field :password_confirmation, placeholder: 'Подтверждение', id: 'password_confirmation' %>
-        <%= field_errors_div(@user, :password_confirmation) %>
-      </td>
-      <td class='field_hints'></td>
-    </tr>
+      <tr>
+        <td id='password_td'>
+          <%= f.password_field :password, placeholder: 'Пароль', id: 'password', class: 'rounded' %>
+        </td>
+        <td class='field_hints'>
+          <p>**Не менее 7 символов</p>
+        </td>
+      </tr>
 
-    <tr>
-      <td><%= f.submit 'Зарегистрироваться', id: 'register' %></td>
-      <td></td>
-    </tr>
+      <%= field_errors_tr(@user, :password) %>
+
+      <tr>
+        <td id='password_conf_td'>
+          <%= f.password_field :password_confirmation, placeholder: 'Подтверждение', id: 'password_confirmation', class: 'rounded' %>
+        </td>
+        <td class='field_hints'></td>
+      </tr>
+
+      <%= field_errors_tr(@user, :password_confirmation) %>
+
+      <tr>
+        <td><%= f.submit 'Зарегистрироваться', id: 'register', class: 'button button-controls rounded' %></td>
+        <td></td>
+      </tr>
+    </tbody>
 
   </table>
 

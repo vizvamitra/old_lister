@@ -9,9 +9,13 @@ $main-font-color: #444;
 
 // COLORS
 
-$light-gray: rgb(249, 249, 252);
+$light-gray: rgb(249, 249, 249);
 $darker-gray: rgb(200, 200, 200);
 $purple: #9ecaed;
+
+$link_color: darken($purple, 20%);
+
+$error-color: #F57070;
 
 $textarea-background-color: $light-gray;
 
@@ -23,6 +27,12 @@ $box-shadow-nofocus: 0px 0px 6px 0px $darker-gray inset;
 
 // BASIC MARGINS AND PADDINGS
 $basic-margin-vertical: 15px;
+$basic-margin-horisontal: $basic-margin-vertical;
+$basic-padding-vertical: $basic-margin-vertical;
+$basic-padding-horisontal: $basic-margin-horisontal;
+
+// BORDERS
+$border-radius: 6px;
 
 // ELEMENTS
 

@@ -1,0 +1,29 @@
+@import "variables";
+
+.button{
+  display: inline-block;
+  padding: 3px 5px;
+  border: 2px solid #ccc;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  text-decoration: none;
+  color: $main-font-color !important;
+
+  &:active{
+    border: none !important;
+    height: 34px !important;
+  }
+  &:focus{outline: none;}
+  &::-moz-focus-inner{border: none;}
+}
+
+.button-controls{
+  background: darken($light-gray, 7%);
+
+  &:hover{background: darken($light-gray, 12%);}
+}
+
+.button-medium{
+  width: 100px;
+}

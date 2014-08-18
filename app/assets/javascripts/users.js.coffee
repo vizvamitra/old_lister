@@ -5,8 +5,8 @@
 window.Lister.define 'Users', ->
 
   clear_error_info = ->
-    for div in $('div.field_errors')
-      div.innerHTML = ''
+    for td in $('tr.errors_tr td:first-child')
+      td.innerHTML = ''
 
     $('#login_td').removeClass('field_with_errors')
     $('#password_td').removeClass('field_with_errors')
@@ -38,7 +38,7 @@ window.Lister.define 'Users', ->
 
     if (msg)
       login_td.addClass('field_with_errors')
-      login_td.find('.field_errors').append('<p>' + msg + '</p>')
+      $('#login_errors').append('<p>' + msg + '</p>')
       return 1
     else 
       return 0
@@ -55,7 +55,7 @@ window.Lister.define 'Users', ->
 
     if (msg)
       password_td.addClass('field_with_errors')
-      password_td.find('.field_errors').append('<p>' + msg + '</p>')
+      $('#password_errors').append('<p>' + msg + '</p>')
       return 1
     else 
       return 0
@@ -69,7 +69,7 @@ window.Lister.define 'Users', ->
     if (password_conf != password)
       msg = 'Не совпадает с паролем'
       password_conf_td.addClass('field_with_errors')
-      password_conf_td.find('.field_errors').append('<p>' + msg + '</p>')
+      $('#password_confirmation_errors').append('<p>' + msg + '</p>')
       return 1
     else 
       return 0

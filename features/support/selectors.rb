@@ -12,6 +12,7 @@ module HtmlSelectorsHelpers
     when 'password' then '#new_user #password'
     when 'password_confirmation' then '#new_user #password_confirmation'
     when 'register' then '#new_user #register'
+    when 'back' then '#back'
 
     when /^"([^"]+)"$/
       $1

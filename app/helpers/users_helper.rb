@@ -1,6 +1,15 @@
 module UsersHelper
-  def field_errors_div(model, field)
-    "<div class='field_errors'>#{messages_string(model,field)}</div>".html_safe
+  def field_errors_tr(model, field)
+    "<tr class='errors_tr'>
+      <td id='#{field.to_s}_errors'>
+        #{field_errors(model, field)}
+      </td>
+      <td></td>
+    </tr>".html_safe
+  end
+
+  def field_errors(model, field)
+    messages_string(model,field).html_safe
   end
 
   private

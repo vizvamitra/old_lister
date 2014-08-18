@@ -13,22 +13,11 @@
   <% if flash[:notice] %>
     <div id='notice'><%= flash[:notice] %></div>
   <% end %>
-  <div id='errors'></div>
 </div>
 
 <div id='wrapper'>
-  <aside id='main_controls'>
-    <div id='user_menu'>
-      <%= render 'shared/user_menu' %>
-    </div>
-  </aside>
-
-  <section id='main'>
-    <%= yield %>    
-  </section>
+  <%= yield %>
 </div>
-
-<div id='registration_form_wrapper'></div>
 
 </body>
 </html>

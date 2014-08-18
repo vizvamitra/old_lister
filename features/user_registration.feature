@@ -18,6 +18,10 @@ Scenario: happy path: registering an account
   And I should see "Пользователь Username создан успешно"
   And I should see "Username"
 
+Scenario: happy path: going back
+  When I press "back"
+  Then I should be on the Lister home page
+
 
 Scenario: sad path: login is empty
   When I try to register with "", "password"

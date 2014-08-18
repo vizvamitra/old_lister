@@ -8,7 +8,7 @@ module JavascriptHelpers
       when 'done' then 'check'
       when 'delete' then 'cross'
     end
-    puts "$('li:contains(\"#{inner_text}\")').find('a.#{button_class}').click();"
+
     "$('li:contains(\"#{inner_text}\")').find('a.#{button_class}').click();"
   end
 end

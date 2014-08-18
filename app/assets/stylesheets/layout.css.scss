@@ -34,18 +34,6 @@ body{
   }
 }
 
-#registration_form_wrapper{
-  margin: auto;
-  padding: 10px;
-  text-align: center;
-
-  input{margin-bottom: 5px;}
-}
-
-.field_with_errors input{
-  border: 3px solid #f88;
-}
-
 #messages{
   position: absolute;
   top: 0;
@@ -57,4 +45,12 @@ body{
     background: $notice-bg-color;
     color: $notice-font-color;
   }
+}
+
+.rounded{
+  border-radius: $border-radius;
+}
+
+a, a:active, a:visited{
+  color: $link_color;
 }
