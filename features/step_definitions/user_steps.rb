@@ -8,3 +8,8 @@ When(/^(?:|I )try to register with "([^"]*)", "([^"]*)"(?:, "([^"]*)")?$/) do |n
   step %Q{I fill in "password_confirmation" with "#{confirm || pass}"}
   step 'I press "register"'
 end
+
+Given(/^(?:|I )am logged in as a "([^"]*)"$/) do |login|
+  user = User.find_by(login: login)
+  session['user_id'] = user.id
+end
